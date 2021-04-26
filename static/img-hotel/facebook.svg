@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.5;
+      }
+    </style>
+  </defs>
+  <image id="facebook" class="cls-1" width="24" height="24" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABpUlEQVRIib2WzytEURTHP+f1ouRHycRCFMJGKTVpkrV/YMrG0v+kLO34B+zVJBs7kppmijKRBTVh4ejmPG7P3DsT83zr1nnv3vv9nnc6P54QgaomwCwwB5SAITvdBu6BOtAUkfcQS0cBIy4DFWA05gTwBNSAs05CPwRUdQKoApNdiPNoAUci8hAUUNVpYAcYjBBdAw0LkwIrwLztvQIHInLzQ8A8342QO7JDEbnMObUFrHuvnMh+9iUJ3zGvdvH8PE8egOOoGiepnSn3EPMrz+sFYBMYCCTBpHGeJqZU6cGzZ89eA2aAKS9186g47izPu6Wig5+C0foxOM7Z1IooBJfjj7b35p259WyXecOB+3OpVWgIFyJynN8TkZPMVtVtYDlwv5REYtgPDKVdSMZVNfOuISIvfBdkFpaRGEFqFRnCoi2HPeDO7I1IWHy0E+uKReE+sZZbFOpOoGnp2G84zmZiPbxWgEDNcSf2cGb9vF9oGednN7WvOLJW+1e82uB5/xIwEde/DyIiS6q66hYwFjiTDZyvqfa/I9MTKW7odxD6/W8L8AGAIo0q9Xgr7AAAAABJRU5ErkJggg=="/>
+</svg>

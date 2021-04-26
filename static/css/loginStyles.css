@@ -1,0 +1,39 @@
+.loginForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.registerLink {
+    margin-top: 30px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+.content {
+    max-width: 400px;
+}
+
+.imgHotel {
+    max-width: 1000px;
+    max-height: 1000px;
+}
+
+.text-hotel {
+    font-size: 23px;
+}
+
+.map1 {
+    float: left;
+    padding-top: 195px;
+    padding-right: 30px;
+    font-size: 30px;
+}
