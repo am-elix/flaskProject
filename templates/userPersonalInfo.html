@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Личный аккаунт {{user}}
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyles.css') }}"
+      xmlns="http://www.w3.org/1999/html">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="alert alert-info">
+            <br>
+            <a href="/" class="btn btn-warning">Вернуться в главное меню</a>
+            <a href="/personalUserArea" class="btn btn-success">Заявки на бронь пользователя {{user}}</a>
+            <a href="/logout" class="btn btn-danger">Выйти из аккаунта</a>
+            {% for el in info %}
+                {% if el.userName == user: %}
+                    <br>
+                    <br>
+                    <h1>{{ el.userName }}</h1>
+                    <br>
+                    <ul>
+                        <li><p>Телфон: {{ el.userTelephone }}</p></li>
+                        <li><p>E-mail: {{ el.userEmail }}</p></li>
+                        <li><p>Ваше полное имя: {{ el.userFullName }}</p></li>
+                    </ul>
+                    <a href="/{{el.id}}/del" class="btn btn-danger">Удалить аккаунт</a>
+                    <a href="/{{el.id}}/update" class="btn btn-success">Редактировать личную информацию</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

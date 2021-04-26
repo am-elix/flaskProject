@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Подробная информация о отеле {{hotel.hotelName}}
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyles.css') }}"
+      xmlns="http://www.w3.org/1999/html">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="alert alert-info">
+                <a href="/deleteInfoHotel" class="btn btn-warning">Вернуться в главное меню</a>
+                <a href="/returnAllHotels" class="btn btn-success">Вернуться назад</a>
+                <h1>{{hotel.hotelName}}</h1>
+                <img  class='imgHotel' src="/static/img-hotel/{{ hotel.imgOfHotel }}" alt=""> <br><br>
+                <p class="text-hotel"><b>Город: {{ hotel.city}}</b></p>
+                <p class="text-hotel"><b>Цена: от {{ hotel.price }} р/ночь</b></p>
+                <p class="text-hotel">{{ hotel.description }}</p>
+                <p class="text-hotel map1">Отель находится здесь:</p>
+                <img  class='imgHotel map2' src="/{{mapFile}}" alt="">
+        </div>
+    </div>
+{% endblock %}

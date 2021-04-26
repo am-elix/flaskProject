@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Все заявки пользователей
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyles.css') }}"
+      xmlns="http://www.w3.org/1999/html">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="alert alert-info">
+            <a href="/" class="btn btn-warning">Вернуться в главное меню</a>
+            <a href="/createHotelInfo" class="btn btn-danger">Создать страницу для отеля</a>
+            <a href="/users" class="btn btn-success">Все пользователи сайта</a>
+            <h1>Все заявки пользователей</h1>
+            <ul>
+                {% for el in requestsInfo %}
+                <p>....................................................................................................................................................................................................................................................................................................................</p>
+                <li><h3>Ник пользователя: {{ el.User.userName }}</h3></li>
+                <ul>
+                    <li><p><b>Город: {{ el.UsersRequests.city }}</b></p></li>
+                    <li><p>Категория номера: {{ el.UsersRequests.category }}</p></li>
+                    <li><p>Дата начала брони: {{ el.UsersRequests.startOfReservation }}</p></li>
+                    <li><p>Кол-во ночей: {{ el.UsersRequests.nightsAmount }}</p></li>
+                    <li><p>Кол-во гостей: {{ el.UsersRequests.guestsAmount }}</p></li>
+                    <li><p>Время отправки заявки: {{ el.UsersRequests.dateRequest }}</p></li>
+                <br>
+                </ul>
+            {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+{% endblock %}

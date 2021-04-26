@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Отели
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyles.css') }}"
+      xmlns="http://www.w3.org/1999/html">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="alert alert-info">
+            <a href="/" class="btn btn-warning">Вернуться в главное меню</a>
+            <h1>Доступные отели</h1>
+            {% for el in hotels %}
+            <p>....................................................................................................................................................................................................................................................................................................................</p>
+            <img  class='imgHotel' src="../static/img-hotel/{{el.imgOfHotel}}" alt="">
+            <h3>{{el.hotelName}}</h3>
+            <ul>
+                <li><p><b>Город: {{ el.city}}</b></p></li>
+                <li><p>От {{ el.price }} р/ночь</p></li>
+                <li><p>Краткая информация: {{ el.shortInfo }}</p></li>
+            </ul>
+            <br>
+            <a href="/allHotels/{{el.id}}/detail" class="btn btn-warning">Детальнее</a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

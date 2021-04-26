@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Изменение личной информации пользователя {{info.userName}}
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyles.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="alert alert-info">
+            <form class="form-signin" method="post">
+                <a href="/" class="btn btn-warning">Вернуться в главное меню</a>
+                <a href="/userPersonalInfo" class="btn btn-success">Отменить редактирование</a>
+                <a href="/logout" class="btn btn-danger">Выйти из аккаунта</a>
+                <h1 class="h3 mb-3 font-weight-normal">Редактирование личной информации {{info.userName}}</h1>
+                <input type="text" name="userTelephone" id="userTelephone" class="form-control" value="{{info.userTelephone}}" placeholder="Мобильный телефон" required="" autofocus=""><br>
+                <input type="email" name="userEmail" id="userEmail" class="form-control" value="{{info.userEmail}}"  placeholder="Email" required="" autofocus=""><br>
+                <input type="text" name="userFullName" id="userFullName" class="form-control" value="{{info.userFullName}}" placeholder="Имя и фамилия" required="" autofocus=""><br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Редактировать</button><br>
+            </form>
+        </div>
+    </div>
+{% endblock %}

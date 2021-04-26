@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Пользователи
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyles.css') }}"
+      xmlns="http://www.w3.org/1999/html">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="alert alert-info">
+             <a href="/" class="btn btn-warning">Вернуться в главное меню</a>
+            <a href="/usersRequests" class="btn btn-danger">Просмотр всех заявок пользователей</a>
+            <a href="/createHotelInfo" class="btn btn-success">Создать страницу для отеля</a>
+            <h1>Все пользователи сайта</h1>
+            <ul>
+            {% for el in usersInfo %}
+                <p>....................................................................................................................................................................................................................................................................................................................</p>
+                <li><h3>{{ el.userName }}</h3></li>
+                <br>
+                <ul>
+                <li><p><b>{{ el.userPassword }}</b></p></li>
+                <li><p>{{ el.userTelephone }}</p></li>
+                <li><p>{{ el.userEmail }}</p></li>
+                <li><p>{{ el.userFullName }}</p></li>
+                <li><p>id пользователя: {{ el.id }}</p></li>
+                </ul>
+                <br>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

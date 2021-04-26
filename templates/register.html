@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Регистрация
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyles.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="loginForm container text-center">
+        <div class="content">
+            <form class="form-signin" method="post">
+                <a href="/">
+                    <img class="mb-5" src="../static/img-hotel/Logo.png" alt="" width="261" height="54">
+                </a>
+                <h1 class="h3 mb-3 font-weight-normal">Создайте свой аккаунт</h1>
+                <h7 class="mb-3 font-weight-normal">{{ warning }}</h7>
+                <input type="text" name="userTelephone" id="userTelephone" class="form-control" placeholder="Мобильный телефон" required="" autofocus=""><br>
+                <input type="email" name="userEmail" id="userEmail" class="form-control" placeholder="Email" required="" autofocus=""><br>
+                <input type="text" name="userFullName" id="userFullName" class="form-control" placeholder="Имя и фамилия" required="" autofocus=""><br>
+                <input type="text" name="userName" id="userName" class="form-control" placeholder="Имя пользователя" required="" autofocus=""><br>
+                <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Пароль" required=""><br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрация</button><br>
+                <a href="/login" class="h7 registerLink font-weight-normal">Войдите в аккаунт, если он у вас уже есть</a>
+                <p class="mt-3 mb-3 text-muted">© 2020-2021</p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Личный аккаунт {{user}}
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyles.css') }}"
+      xmlns="http://www.w3.org/1999/html">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="alert alert-info">
+            <a href="/" class="btn btn-warning">Вернуться в главное меню</a>
+            <a href="/userPersonalInfo" class="btn btn-success">Личная информация пользователя {{user}}</a>
+            <a href="/logout" class="btn btn-danger">Выйти из аккаунта</a>
+            {% if requests: %}
+            <h1>Все заявки {{user}}</h1>
+                {% for el in requests %}
+                    {% if el.User.userName == user: %}
+                        <p>....................................................................................................................................................................................................................................................................................................................</p>
+                        <h2>{{ el.UsersRequests.city }}</h2>
+                        <p><b>{{ el.UsersRequests.category }}</b></p>
+                        <p>{{ el.UsersRequests.startOfReservation }}</p>
+                        <p>{{ el.UsersRequests.nightsAmount }}</p>
+                        <p>{{ el.UsersRequests.guestsAmount }}</p>
+                        <br>
+                        <a href="/{{el.id}}/del" class="btn btn-danger">Удалить заявку</a>
+                        <a href="/{{el.id}}/update" class="btn btn-success">Редактировать заявку</a>
+                    {% endif %}
+                {% endfor %}
+            {% else: %}
+                <h1>Вы пока что не отправляли заявок на бронь</h1>
+                <br>
+                <br>
+                <br>
+                <a href="/" class="btn btn-warning">Забронировать себе номер</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

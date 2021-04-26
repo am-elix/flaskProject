@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Логин
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyles.css') }}"
+      xmlns="http://www.w3.org/1999/html">
+{% endblock %}
+
+{% block body %}
+    <div class="loginForm container text-center">
+        <div class="content">
+            <form class="form-signin" method="post">
+                <a href="/">
+                    <img class="mb-4" src="../static/img-hotel/Logo.png" alt="" width="261" height="54">
+                </a>
+                <h1 class="h3 mb-3 font-weight-normal">Войдите в свой аккаунт</h1>
+                <h7 class="mb-3 font-weight-normal">{{ warning }}</h7>
+                <input type="text" name="userName" id="userName" class="form-control" placeholder="Имя пользователя" required="" autofocus=""><br>
+                <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Пароль" required=""><br>
+                <div class="checkbox mb-3">
+                    <label>
+                      <input type="checkbox" value="remember-me"> Запомнить меня
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button><br>
+                <a href="/register" class="h5 registerLink font-weight-normal">Регистрация</a>
+                <p class="mt-5 mb-3 text-muted">© 2020-2021</p>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
